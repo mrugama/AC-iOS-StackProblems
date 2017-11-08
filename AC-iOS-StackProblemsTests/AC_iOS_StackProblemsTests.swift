@@ -33,11 +33,13 @@ class AC_iOS_StackProblemsTests: XCTestCase {
     func testLargest() {
         XCTAssertTrue(largestElement(in: myStack) == 30)
         XCTAssertTrue(largestElement(in: myOtherStack) == 120)
+        XCTAssertNil(largestElement(in: emptyStack))
     }
     
     func testSum() {
         XCTAssertTrue(sum(of: myStack) == 61)
         XCTAssertTrue(sum(of: myOtherStack) == 137)
+        XCTAssertNil(sum(of: emptyStack))
     }
     
     func testReverse() {
@@ -78,7 +80,7 @@ class AC_iOS_StackProblemsTests: XCTestCase {
     func testIsBalanced() {
         XCTAssertTrue(isBalanced(str: "((()))"))
         XCTAssertFalse(isBalanced(str: "((())"))
-        XCTAssertFalse(isBalanced(str: "(()((())()))"))
+        XCTAssertTrue(isBalanced(str: "(()((())()))"))
         XCTAssertTrue(isBalanced(str: "(()((())(())))"))
     }
     
